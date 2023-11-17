@@ -73,6 +73,11 @@ body {
   background: rgb(173, 171, 171);
 }
 
+.icon {
+  text-decoration: none;
+  color: white;
+}
+
 /* Go back arrow style */
 
 .arrow {
@@ -83,47 +88,6 @@ body {
   /*   border:solid 1px white; */
   transition: 0.5s;
   overflow: hidden;
-}
-
-.arrow:hover {
-  /*  animation:borderAni 5s cubic-bezier(0, 0.6, 1, 0.4); */
-  border: solid 2px white;
-  border-radius: 50%;
-}
-.arrow:after {
-  position: absolute;
-  display: block;
-  content: "";
-  color: white;
-  width: 20px;
-  height: 15px;
-  /*   border:solid 1px;  */
-  top: -1px;
-  border-bottom: solid 2px;
-  transform: translatex(4px);
-}
-
-.arrow:before {
-  position: absolute;
-  display: block;
-  content: "";
-  color: white;
-  width: 8px;
-  height: 8px;
-  /*   border:solid 1px;  */
-  border-top: solid 2px;
-  border-left: solid 2px;
-  top: 50%;
-  left: 2px;
-  transform-origin: 0% 0%;
-  transform: rotatez(-45deg);
-}
-.arrow:hover:before {
-  animation: aniArrow01 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
-}
-
-.arrow:hover:after {
-  animation: aniArrow02 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
 }
 
 @keyframes aniArrow01 {

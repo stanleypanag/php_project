@@ -24,9 +24,9 @@
 
 .welcome-user a {
   text-decoration: none;
-  color: rgb(3, 2, 2);
+  color: rgb(224, 220, 220);
   margin-right: 50px;
-  border-style: solid;
+  border-style: ridge;
   padding: 10px;
   background-color: rgb(134, 35, 35);
   border-color: rgb(1, 10, 19);
@@ -34,8 +34,8 @@
 }
 
 .welcome-user a:hover {
-  color: rgb(255, 255, 255);
-  background-color: brown;
+  color: rgb(0, 0, 0);
+  background-color: rgb(165, 74, 74);
 }
 
 .content .card {
@@ -55,8 +55,13 @@
   text-align: center;
 }
 
+.table-edit {
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+}
+
 .my-list-text {
-  font-family: "Cedarville Cursive";
   text-align: center;
   font-weight: bolder;
   border-style: solid;

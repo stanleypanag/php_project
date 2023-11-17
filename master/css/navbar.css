@@ -69,6 +69,7 @@ body {
 /* SECTION 1 STYLE */
 
 .section1 {
+  width: 100%;
   height: 80vh;
   text-align: center;
 }
@@ -125,4 +126,11 @@ body {
 .header-list {
   position: relative;
   top: 5px;
+}
+
+/* Section 3 style */
+
+.section3 {
+  width: 100%;
+  height: 100%;
 }

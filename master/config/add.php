@@ -6,13 +6,27 @@ if ($_SESSION['user']) {
     header("location: ../index.php");
 }
 
-require_once('connection.php');
+$servername = "localhost";
+$username_db = "root";
+$password_db = "";
+$db_name = "master_db";
+// Create connection
+$conn = mysqli_connect(
+    $servername,
+    $username_db,
+    $password_db,
+    $db_name
+);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $details = mysqli_real_escape_string($conn, $_POST['details']);
     $dateTime = new DateTime();
     $time = $dateTime->format("H:i:s"); //time
-    $date = $dateTime->format("F d, Y"); //date
+    $date = $dateTime->format("F, d, Y"); //date
     $decision = "no";
 
     foreach ($_POST['public'] as &$each_check) //gets the data from the checkbox

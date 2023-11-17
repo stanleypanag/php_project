@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -22,10 +23,16 @@ $user = $_SESSION['user']; //assigns user value
 ?>
 
 <body>
+
+    <div class="loader-wrapper">
+        <img src="./assets/tyga.png" alt="Loading Icon" class="loader">
+    </div>
+
     <div class="welcome-user">
-        <h1>Hello <?php print "$user" ?>!</h1>
+        <h1>Hello <span style="color: red;"><?php print "$user" ?>!</span></h1>
         <a href="./config/logout.php">Log out</a>
     </div>
+
 
     <div class="content mb-5">
         <div class="card">
@@ -42,7 +49,7 @@ $user = $_SESSION['user']; //assigns user value
                             </label>
                         </div>
 
-                        <button type="submit" value="Add to list" class="btn btn-dark mt-5">
+                        <button type="submit" value="Add to list" class="btn btn-light mt-5">
                             ADD
                         </button>
 
@@ -71,6 +78,8 @@ $user = $_SESSION['user']; //assigns user value
             <tbody>
 
                 <?php
+
+
                 $servername = "localhost";
                 $username_db = "root";
                 $password_db = "";
@@ -89,8 +98,8 @@ $user = $_SESSION['user']; //assigns user value
                     print "<td>" . $row['details'] . "</td>";
                     print "<td>" . $row['date_posted'] . "-" . $row['date_edited'] . "</td>";
                     print "<td>" . $row['time_posted'] . "-" . $row['time_edited'] . "</td>";
-                    print "<td><a href='edit.php'?id=" . $row['id'] . ">edit</a></td>";
-                    print "<td><a href='../config/delete.php?id=" . $row['id'] . "'>delete</a></td>";
+                    print "<td><a href='edit.php?id=" . $row['id'] . "' class='btn btn-primary px-4'>edit</a></td>";
+                    print "<td><a href='./config/delete.php?id=" . $row['id'] . "' class='btn btn-danger px-4'>delete</a></td>";
                     print "<td>" . $row['public'] . "</td>";
                     print "</tr>";
                 }
@@ -100,5 +109,9 @@ $user = $_SESSION['user']; //assigns user value
     </div>
 
 </body>
+
+<script src="./js/loaderDelay.js">
+
+</script>
 
 </html>
